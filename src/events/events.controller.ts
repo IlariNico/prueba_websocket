@@ -10,6 +10,11 @@ export class EventsController {
     return this.eventsService.create(body);
   }
 
+  @Get('user/:id')
+  forUser(@Param('id') id: string) {
+    return this.eventsService.forUser(parseInt(id, 10));
+  }
+
   @Get(':id/messages')
   messages(@Param('id') id: string) {
     return this.eventsService.getMessages(parseInt(id, 10));

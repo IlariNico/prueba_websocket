@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Events Chat</title>
+</head>
+<body>
+  <div id="login">
+    <input id="username" placeholder="username" />
+    <input id="password" type="password" placeholder="password" />
+    <button id="loginBtn">Login</button>
+  </div>
+  <div id="events" style="display:none;">
+    <h2>Your Events</h2>
+    <ul id="eventsList"></ul>
+  </div>
+  <div id="chat" style="display:none;">
+    <h2 id="chatTitle"></h2>
+    <ul id="messages"></ul>
+    <input id="messageInput" placeholder="message" />
+    <button id="sendBtn">Send</button>
+    <button id="backBtn">Back</button>
+  </div>
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <script type="module" src="./dist/main.js"></script>
+</body>
+</html>

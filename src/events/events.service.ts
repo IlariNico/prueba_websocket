@@ -43,4 +43,12 @@ export class EventsService {
       order: { createdAt: 'ASC' },
     });
   }
+
+  async forUser(userId: number) {
+    const entries = await this.userEventsRepo.find({
+      where: { user: { id: userId } },
+      relations: ['event'],
+    });
+    return entries.map((ue) => ({ ...ue.event, roomId: ue.roomId }));
+  }
 }
